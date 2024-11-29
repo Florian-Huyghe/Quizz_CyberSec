@@ -1,0 +1,330 @@
+/* Variables de couleurs pour mode clair et sombre */
+:root {
+    --background-light: #f4f4f9;
+    --background-dark: #121212;
+    --text-light: #333;
+    --text-dark: #f4f4f9;
+    --button-light: #4CAF50;
+    --button-dark: #6200ea;
+    --button-hover-light: #45a049;
+    --button-hover-dark: #3700b3;
+    --input-bg-light: #ffffff;
+    --input-bg-dark: #333333;
+    --input-border-light: #ccc;
+    --input-border-dark: #444;
+    --recap-bg-light: #f9f9f9;
+    --recap-bg-dark: #333333;
+}
+
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--background-light);
+    color: var(--text-light);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.quiz-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    margin: 20px;
+    transition: background-color 0.3s;
+}
+
+h1 {
+    color: var(--text-light);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+/* Mode sombre */
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+    position: relative;
+}
+
+div#question{
+    color: black;
+}
+
+.quiz-container.dark-mode {
+    background-color: var(--background-dark);
+}
+
+button {
+    background-color: var(--button-light);
+    width: 100%;
+    color: white;
+    border: none;
+    padding: 12px;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--button-hover-light);
+}
+
+body.dark-mode button {
+    background-color: var(--button-dark);
+}
+
+body.dark-mode button:hover {
+    background-color: var(--button-hover-dark);
+}
+
+button#dark-mode-toggle{
+    max-width: 400px;
+    
+}
+
+button#next{
+    background: rgb(0,52,255);
+    background: -moz-radial-gradient(circle, rgba(0,52,255,1) 0%, rgba(0,232,255,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(0,52,255,1) 0%, rgba(0,232,255,1) 100%);
+    background: radial-gradient(circle, rgba(0,52,255,1) 0%, rgba(0,232,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0034ff",endColorstr="#00e8ff",GradientType=1);
+}
+
+/* Formulaire */
+#quiz-form {
+    background-color: var(--input-bg-light);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+body.dark-mode #quiz-form {
+    background-color: var(--input-bg-dark);
+}
+
+#quiz-form input[type="text"],
+#quiz-form input[type="email"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0 20px;
+    border: 1px solid var(--input-border-light);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+body.dark-mode #quiz-form input[type="text"],
+body.dark-mode #quiz-form input[type="email"] {
+    border: 1px solid var(--input-border-dark);
+}
+
+.recap-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.recap-item {
+    background-color: var(--recap-bg-light);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+body.dark-mode .recap-item {
+    background-color: var(--recap-bg-dark);
+}
+
+.recap-item h3 {
+    margin: 5px 0;
+    font-size: 1.1em;
+    color: var(--text-light);
+}
+#results {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Styles pour le récapitulatif */
+.recap-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.recap-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.recap-item h3 {
+    margin: 5px 0;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.recap-item p {
+    margin: 5px 0 10px;
+    font-size: 1em;
+}
+
+.user-answer {
+    color: #d9534f; /* Rouge pour les mauvaises réponses */
+    font-weight: bold;
+}
+
+.correct-answer {
+    color: #5cb85c; /* Vert pour les bonnes réponses */
+    font-weight: bold;
+}
+
+body.dark-mode .recap-item h3 {
+    color: var(--text-dark);
+}
+
+body.dark-mode .recap-item p.correct-answer {
+    color: #5cb85c; /* Vert pour les bonnes réponses */
+    font-weight: bold;
+}
+
+body.dark-mode .recap-item p.user-answer {
+    color: #d9534f; /* Rouge pour les mauvaises réponses */
+    font-weight: bold;
+}
+
+.recap-item p {
+    margin: 5px 0 10px;
+    font-size: 1em;
+}
+
+body.dark-mode .recap-item p {
+    color: var(--text-dark);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .quiz-container {
+        padding: 20px;  /* Augmenté pour éviter la congestion des éléments */
+        max-width: 100%;
+        margin: 0;  /* Retrait des marges de 20px pour un remplissage complet */
+    }
+
+    h1 {
+        font-size: 1.6rem;  /* Taille de titre adaptée */
+        margin-bottom: 15px;  /* Ajout de marge pour éviter que les éléments ne soient trop proches */
+    }
+
+    button {
+        padding: 12px;
+        font-size: 1rem;  /* Légèrement plus grand pour une meilleure lisibilité sur mobile */
+    }
+
+    .recap-item {
+        padding: 15px;
+        margin-bottom: 10px;  /* Espacement entre les éléments du récapitulatif */
+    }
+
+    /* Ajustement des entrées du formulaire */
+    #quiz-form input[type="text"],
+    #quiz-form input[type="email"] {
+        font-size: 1rem;  /* Ajustement de la taille du texte */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;  /* Ajouter un peu de padding pour que le contenu ne touche pas les bords de l'écran */
+    }
+
+    .quiz-container {
+        padding: 25px;  /* Augmenter l'espacement interne pour éviter la surcharge d'éléments */
+    }
+
+    h1 {
+        font-size: 1.4rem;  /* Réduction de la taille du titre pour les petits écrans */
+        margin-bottom: 15px;
+    }
+
+    button {
+        padding: 10px;  /* Taille du bouton améliorée pour l'ergonomie mobile */
+        font-size: 0.9rem;  /* Taille du texte ajustée pour les petits écrans */
+    }
+
+    /* Réduire la taille de la police du récapitulatif pour les petits écrans */
+    .recap-item h3,
+    .recap-item p {
+        font-size: 1rem;
+    }
+
+    /* Formulaire */
+    #quiz-form input[type="text"],
+    #quiz-form input[type="email"] {
+        font-size: 1rem;  /* Maintenir la taille d'entrée agréable pour la saisie sur mobile */
+    }
+
+    /* Optimisation des boutons pour les petits écrans */
+    #submit-button {
+        font-size: 1rem;
+        padding: 14px;
+    }
+
+    /* Modification du texte du bouton pour les petits écrans */
+    #dark-mode-toggle {
+        font-size: 0.9rem; /* Taille de police adaptée pour les écrans plus petits */
+        padding: 12px; /* Ajuster le padding pour plus de confort */
+    }
+}
+
+@media (max-width: 360px) {
+    /* Sur très petits écrans, rendre les boutons encore plus accessibles */
+    button {
+        padding: 10px;  /* Diminuer légèrement le padding */
+        font-size: 0.85rem;  /* Taille de texte encore réduite */
+    }
+
+    h1 {
+        font-size: 1.3rem;  /* Taille de titre réduite pour plus de lisibilité */
+    }
+
+    .quiz-container {
+        padding: 20px;  /* Espacement réduit pour éviter un écran trop surchargé */
+    }
+
+    #quiz-form input[type="text"],
+    #quiz-form input[type="email"] {
+        font-size: 0.95rem;  /* Réduction de la taille de texte pour les petits écrans */
+    }
+
+    .recap-item h3, .recap-item p {
+        font-size: 0.95rem;  /* Diminution de la taille de texte dans les éléments récapitulatifs */
+    }
+
+    #dark-mode-toggle {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+}
+
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Cybersécurité</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="styles/images/favicon.jpg" type="image/x-icon">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz Cybersécurité</h1>
+        <div class="quiz">
+            <button id="startTest">Démarrer l'entrainement</button>
+            <button id="startQuiz">Démarrer le Quiz</button>
+        </div>
+        <form id="quiz-form" class="hidden">
+            <!-- Champ Nom -->
+            <label for="nom">Nom: <span style="color: red;">*</span></label>
+            <input type="text" id="nom" required><br>
+
+            <!-- Champ Prénom -->
+            <label for="prenom">Prénom: <span style="color: red;">*</span></label>
+            <input type="text" id="prenom" required><br>
+
+            <!-- Champ Email -->
+            <label for="email">Email: <span style="color: red;">*</span></label>
+            <input type="text" id="email" required><br>
+
+            <!-- Champ Entreprise -->
+            <label for="entreprise">Entreprise: <span style="color: red;">*</span></label>
+            <input type="text" id="entreprise" required><br>
+
+            <!-- Checkbox -->
+            <label for="checkbox">En cliquant sur le bouton, vous acceptez de partager vos informations ci-dessus <span style="color: red;">*</span></label>
+            <input type="checkbox" id="checkbox"><br>
+
+            <!-- Bouton de soumission -->
+            <button type="button" id="submit-button">Soumettre</button>
+        </form>
+
+        <div id="quiz" class="hidden">
+            <div id="question"></div>
+            <div id="answers"></div>
+            <button id="next" class="hidden">Question suivante</button>
+        </div>
+        <div id="results" class="hidden"></div>
+        <button id="restart" class="hidden">Recommencer le quiz</button>
+    </div>
+    <!-- Bouton Dark Mode -->
+    <button id="dark-mode-toggle">Activer le Dark Mode</button>
+    
+    <script src="scripts/AllQuizQuestions.js"></script>
+    <script src="scripts/QuizQuestions.js"></script>
+    <script src="scripts/script.js"></script>
+
+    <!-- Client Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script> 
+    <script src="scripts/bdd.js"></script>
+    
+    <script src="scripts/switchMode.js"></script>
+</body>
+</html>
