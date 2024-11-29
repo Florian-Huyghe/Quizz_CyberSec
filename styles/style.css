@@ -112,6 +112,7 @@ button#next{
     margin: 20px auto;
 }
 
+
 body.dark-mode #quiz-form {
     background-color: var(--input-bg-dark);
 }
