@@ -13,7 +13,8 @@ async function submitQuizData(nom, prenom, entreprise, checkbox, result, email) 
                 checkbox: checkbox,
                 result: result,
                 email: email
-            })
+            }),
+            mode: "no-cors"
         });
 
         // Vérifier si la requête a réussi
