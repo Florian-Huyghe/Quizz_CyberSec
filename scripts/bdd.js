@@ -2,7 +2,7 @@
 async function submitQuizData(nom, prenom, entreprise, checkbox, result, email) {
     try {
         // Effectuer la requête POST
-        const response = await fetch('https://www.quizcyber.42web.io/insert.php', {
+        const response = await fetch('https://quizcyber.42web.io/insert.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'  // Indiquer que nous envoyons des données en JSON
