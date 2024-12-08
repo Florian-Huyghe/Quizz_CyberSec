@@ -1,7 +1,7 @@
 // Fonction pour envoyer les données au serveur PHP
 async function submitQuizData(nom, prenom, entreprise, checkbox, result, email) {
     try {
-        const response = await fetch('https://2.11.202.26/api/insert.php', {
+        const response = await fetch('https://tgxcbnrr.infinityfree.com/api/insert.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
