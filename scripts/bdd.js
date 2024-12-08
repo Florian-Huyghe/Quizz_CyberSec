@@ -1,11 +1,10 @@
 // Fonction pour envoyer les données au serveur PHP
 async function submitQuizData(nom, prenom, entreprise, checkbox, result, email) {
     try {
-        // Effectuer la requête POST
-        const response = await fetch('https://quizcyber.42web.io/insert.php', {
+        const response = await fetch('https://2.11.202.26/api/insert.php', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'  // Indiquer que nous envoyons des données en JSON
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 nom: nom,
@@ -22,7 +21,7 @@ async function submitQuizData(nom, prenom, entreprise, checkbox, result, email) 
             throw new Error('Erreur lors de la requête : ' + response.status);
         }
 
-        // Lire la réponse du serveur
+        // Lire la réponse du serveur (si nécessaire)
         const data = await response.json();
 
         if (data.error) {
@@ -40,7 +39,6 @@ async function submitQuizData(nom, prenom, entreprise, checkbox, result, email) 
         alert('Une erreur est survenue lors de la communication avec le serveur.');
     }
 }
-
 
 
 document.getElementById('submit-button').addEventListener('click', function() {
